@@ -40,10 +40,6 @@ AsyncWebServer server(80);
 // WiFi network name and password:
 const char * networkName = "yale wireless";
 const char * networkPswd = "";
-// const char * networkName = "MOTOFAC6";
-// const char * networkPswd = "w5ex3zppvz";
-// const char * networkName = "Unit 232";
-// const char * networkPswd = "502-202-203";
 
 //IP address to send UDP data to:
 // either use the ip address of the server or 
