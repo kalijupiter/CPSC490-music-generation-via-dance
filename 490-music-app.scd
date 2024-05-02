@@ -72,7 +72,6 @@ SynthDef(\drum2, {
 		[-3, 0, 4, 7],
 		[-4, -1, 2, 4],
 		[-3, 0, 4, 7],
-		// [2, 6, 9, 12, 16],
 		[5, 9, 12, 16],
 		[5, 8, 12, 16]
 	], inf),
@@ -90,7 +89,7 @@ SynthDef(\drum2, {
 		[5, 8, 12, 16],
 		[0, 4, 7]
 	], inf),
-	\dur, Pseq([1, 0.5, 0.5, 1, 0.5]/*[1, 1, 1, 1, 1, 1, 2]*/, inf)
+	\dur, Pseq([1, 0.5, 0.5, 1, 0.5], inf)
 );
 
 ~piano2 = Pbind(
@@ -104,7 +103,7 @@ SynthDef(\drum2, {
 		[2, 5, 9, 12],
 		[5, 9, 12, 16]
 	], inf),
-	\dur, Pseq([0.5, 0.5, 1]/*[2, 2, 1.5, 0.5, 0.5, 0.5, 1]*/, inf)
+	\dur, Pseq([0.5, 0.5, 1], inf)
 );
 )
 
@@ -145,26 +144,26 @@ var melodies = (
 
 //this Pbind was retrieved from https://ccrma.stanford.edu/~ruviaro/texts/A_Gentle_Introduction_To_SuperCollider.pdf (pg 38-39)
 ~melody1 = Pbind(
-    \instrument, \piano,
+    \instrument, \pluck,
 	\degree, Pnsym1(Pwrand(#[lowMelody, highMelody], [0.7, 0.3], inf), melodies),
     \dur, Pwrand(#[0.25, 0.5], #[0.4, 0.6], inf),
 );
 
 ~melody2 = Pbind(
-	\instrument, \piano,
+	\instrument, \pluck,
 	\degree, Pseq([-2, -1, 1, 2, 4, 3, 2], inf),
 	\dur, Pseq([0.5, 0.25, 0.5, 0.25, 0.5, 0.5, 0.5], inf),
 );
 
 ~melody3 = Pbind(
-	\instrument, \piano,
+	\instrument, \pluck,
 	\degree, Prand([0, 1, 2, 4, 5, 7], inf),
 	\octave, Pseq([4, 5], inf),
 	\dur, Prand([1, 0.5], inf),
 );
 
 ~melody4 = Pbind(
-    \instrument, \piano,
+    \instrument, \pluck,
     \degree, Pseq([0, 2, 4, 7, 4, 2, 0], inf),
     \octave, Pseq([4, 5, 4, 5, 4, 5, 4], inf),
     \dur, Pseq([0.5, 0.25, 0.25, 0.5, 0.25, 0.25, 0.5], inf),
@@ -243,10 +242,3 @@ var responder1, responder2, responder3, responder4;
 '/4');
 
 )
-
-
-
-
-
-
-
