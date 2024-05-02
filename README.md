@@ -22,11 +22,11 @@ Lastly, the following libraries need to be installed if they have not been alrea
 3. For Python, oscpy: `pip install oscpy`
 
 Some files need to be updated with user specifications before running:
-1. **490-music-app.ino**: Enter the current WiFi network + password, IP address + port. The offsets also might need to be updated to fit the current sensor. These can be found by running the sketch as is, observing the outputs when the sensor is at rest, and updating the offsets as necessary so that the outputs are 0.0. Also make sure that the `I2C_SDA` and `I2C_SCL` variables reflect the pins being used.
-2. **490-music-app.py**: Enter the IP address + port; these should be the same as the ones specefied in 490-music-app.ino.
+1. `490-music-app.ino`: Enter the current WiFi network + password, IP address + port. The offsets also might need to be updated to fit the current sensor. These can be found by running the sketch as is, observing the outputs when the sensor is at rest, and updating the offsets as necessary so that the outputs are 0.0. Also make sure that the `I2C_SDA` and `I2C_SCL` variables reflect the pins being used.
+2. `490-music-app.py`: Enter the IP address + port; these should be the same as the ones specefied in 490-music-app.ino.
 
 ### Step 1: Data Retrieval
-Once the .ino file is updated as necessary, upload the sketch to the ESP32 board. Visit the WebSerial to make sure data is beng read from the sensor. Also run the .py file, which will recieve the data from .ino, clean it, and send it to Wekinator.
+Once the `.ino` file is updated as necessary, upload the sketch to the ESP32 board. Visit the WebSerial to make sure data is beng read from the sensor. Also run the `.py` file, which will recieve the data from .ino, clean it, and send it to Wekinator.
 
 ### Step 2: Wekinator
 The `weki-music-app` folder in this repo includes specifications for a default classification model that can be opened in Wekinator. To open this, download the folder to your desktop. In Wekinator, select File > New Project, and open the `weki-music-app.wekproj` file. 
@@ -36,7 +36,7 @@ The user can also create a new Wekinator model with their own movements. The ins
 2. The next page is allows you to train the model. Detailed instructions on how to record movements can be found here: http://www.wekinator.org/detailed-instructions/#Dynamic_time_warping_in_Wekinator. For the application to work well, it is recommended that the movements are distinct and relatively simple.
 
 ### Step 3: SuperCollider
-Before running the .scd code, the movementclasses.sc file needs to be saved as an Extension file. See the instructions at the top of this file for further details. Once this is set up, run each section of the scd file by placing the cursor somewhere within the parenthesized block and pressing CMD + Return. The program is now listening for OSC messages from Wekinator. Using the sensor, perform the different movements that Wekinator was trained to recognize, and listen as the music starts and evolves!
+Before running the `.scd` code, the `movementclasses.sc` file needs to be saved as an Extension file. See the instructions at the top of this file for further details. Once this is set up, run each section of the scd file by placing the cursor somewhere within the parenthesized block and pressing CMD + Return. The program is now listening for OSC messages from Wekinator. Using the sensor, perform the different movements that Wekinator was trained to recognize, and listen as the music starts and evolves!
 
 ### Areas for Further Creativity
 The following are suggestions for ways the application can be modified to incorporate creative liberties of person running the application:
