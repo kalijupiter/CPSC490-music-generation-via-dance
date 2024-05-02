@@ -29,7 +29,7 @@ Some files need to be updated with user specifications before running:
 Once the .ino file is updated as necessary, upload the sketch to the ESP32 board. Visit the WebSerial to make sure data is beng read from the sensor. Also run the .py file, which will recieve the data from .ino, clean it, and send it to Wekinator.
 
 ### Step 2: Wekinator
-There is a default Wekinator project uploaded to this repo, trained on up, down, left, and right movements. The user can also run their own Wekinator project. To do so follow these instructions:
+The instructions below explain how to create a project in Wekinator that is compatible with this application:
 1. Open a new project. Make sure the listening port is 6448. In the inputs section, change '# of inputs' to 3. In the outputs section, change 'Port' to 57120, 'Type' to all dynamic time warping, and 'gesture types' to 4. These specifications ensure that the project will receive messages from Python and send them to SuperCollider. Press next.
 2. The next page is allows you to train the model. Detailed instructions on how to record movements can be found here: http://www.wekinator.org/detailed-instructions/#Dynamic_time_warping_in_Wekinator. For the application to work well, it is recommended that the movements are distinct and relatively simple.
 
