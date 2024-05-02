@@ -29,7 +29,9 @@ Some files need to be updated with user specifications before running:
 Once the .ino file is updated as necessary, upload the sketch to the ESP32 board. Visit the WebSerial to make sure data is beng read from the sensor. Also run the .py file, which will recieve the data from .ino, clean it, and send it to Wekinator.
 
 ### Step 2: Wekinator
-The file in this repo includes specifications for a default classification model that can be opened in Wekinator. The user can also create a new model with their own movements. The instructions below explain how to create a new project in Wekinator that is compatible with this application:
+The `weki-music-app` folder in this repo includes specifications for a default classification model that can be opened in Wekinator. To open this, download the folder to your desktop. In Wekinator, select File > New Project, and open the `weki-music-app.wekproj` file. 
+
+The user can also create a new Wekinator model with their own movements. The instructions below explain how to create a new project in Wekinator that is compatible with this application:
 1. Open a new project. Make sure the listening port is 6448. In the inputs section, change '# of inputs' to 3. In the outputs section, change 'Port' to 57120, 'Type' to all dynamic time warping, and 'gesture types' to 4. These specifications ensure that the project will receive messages from Python and send them to SuperCollider. Press next.
 2. The next page is allows you to train the model. Detailed instructions on how to record movements can be found here: http://www.wekinator.org/detailed-instructions/#Dynamic_time_warping_in_Wekinator. For the application to work well, it is recommended that the movements are distinct and relatively simple.
 
