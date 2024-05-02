@@ -8,7 +8,7 @@ The following materials are needed for minimal functionality:
 3. jumper wires
 4. USB chord
 
-Instructions for setting up the hardwar can be found here: https://randomnerdtutorials.com/esp32-mpu-6050-accelerometer-gyroscope-arduino/. **Important**: for this application, the following connections should be made instead of the defaults described in the tutorial: SCL -- GPIO33, SDA -- GPIO32.
+Instructions for setting up the hardware can be found here: https://randomnerdtutorials.com/esp32-mpu-6050-accelerometer-gyroscope-arduino/. **Important**: for this application, the following connections should be made instead of the defaults described in the tutorial: SCL -- GPIO33, SDA -- GPIO32.
 
 Additionally, the following applications need to be installed if they have not been already:
 1. Arduino IDE: https://www.arduino.cc/en/software
@@ -29,15 +29,15 @@ Some files need to be updated with user specifications before running:
 Once the .ino file is updated as necessary, upload the sketch to the ESP32 board. Visit the WebSerial to make sure data is beng read from the sensor. Also run the .py file, which will recieve the data from .ino, clean it, and send it to Wekinator.
 
 ### Step 2: Wekinator
-The instructions below explain how to create a project in Wekinator that is compatible with this application:
+The file in this repo includes specifications for a default classification model that can be opened in Wekinator. The user can also create a new model with their own movements. The instructions below explain how to create a new project in Wekinator that is compatible with this application:
 1. Open a new project. Make sure the listening port is 6448. In the inputs section, change '# of inputs' to 3. In the outputs section, change 'Port' to 57120, 'Type' to all dynamic time warping, and 'gesture types' to 4. These specifications ensure that the project will receive messages from Python and send them to SuperCollider. Press next.
 2. The next page is allows you to train the model. Detailed instructions on how to record movements can be found here: http://www.wekinator.org/detailed-instructions/#Dynamic_time_warping_in_Wekinator. For the application to work well, it is recommended that the movements are distinct and relatively simple.
 
 ### Step 3: SuperCollider
-Before running the .scd code, the .sc file needs to be saved as an Extension file. See the instructions at the top of this file for further details. Once this is set up, run each section of the scd file by placing the cursor somewhere within the parenthesized block and pressing CMD + Return. The program is now listening for OSC messages from Wekinator. Using the sensor, perform the different movements that Wekinator was trained to recognize, and listen as the music starts and evolves!
+Before running the .scd code, the movementclasses.sc file needs to be saved as an Extension file. See the instructions at the top of this file for further details. Once this is set up, run each section of the scd file by placing the cursor somewhere within the parenthesized block and pressing CMD + Return. The program is now listening for OSC messages from Wekinator. Using the sensor, perform the different movements that Wekinator was trained to recognize, and listen as the music starts and evolves!
 
 ### Areas for Further Creativity
 The following are suggestions for ways the application can be modified to incorporate creative liberties of person running the application:
-1. Changing the recognized movements in Wekinator
-2. Changing the SynthDefs and/or PBinds in SuperCollider. This will change the sound of the music that is played.
-3. Changing the ordered pairs of movements that control each music variation in the MoveClasses.
+1. Change the recognized movements in Wekinator.
+2. Modify the SynthDefs and/or PBinds in SuperCollider. This will change the sound of the music that is played.
+3. Modify the ordered pairs of movements that control each music variation in the MoveClasses.
