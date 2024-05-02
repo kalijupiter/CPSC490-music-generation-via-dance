@@ -10,6 +10,7 @@ SynthDef(\piano, {
     Out.ar(out, snd * amp);
 }).add;
 
+//obtained from "https://ccrma.stanford.edu/~ruviaro/texts/A_Gentle_Introduction_To_SuperCollider.pdf" (pg 99)
 SynthDef(\pluck, {arg amp = 0.1, freq = 440, decay = 5, mutedString = 0.1;
 	var env, snd;
 	env = Env.linen(0, decay, 0).kr(doneAction: 2);
@@ -115,7 +116,6 @@ SynthDef(\drum2, {
     \amp, 0.1,
     \pan, Pseq([-0.5, 0.5], inf));
 
-//chatgpt
 ~rhythm2 = Pbind(
     \instrument, \drum2,
     \dur, 0.25,
@@ -143,6 +143,7 @@ var melodies = (
         highMelody: Pseries(14, Prand(#[-3, -2, 2, 3], inf), inf).fold(7, 18)
     );
 
+//this Pbind was retrieved from https://ccrma.stanford.edu/~ruviaro/texts/A_Gentle_Introduction_To_SuperCollider.pdf (pg 38-39)
 ~melody1 = Pbind(
     \instrument, \piano,
 	\degree, Pnsym1(Pwrand(#[lowMelody, highMelody], [0.7, 0.3], inf), melodies),
