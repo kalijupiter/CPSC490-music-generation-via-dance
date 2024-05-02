@@ -37,6 +37,7 @@ The instructions below explain how to create a project in Wekinator that is comp
 Before running the .scd code, the .sc file needs to be saved as an Extension file. See the instructions at the top of this file for further details. Once this is set up, run each section of the scd file by placing the cursor somewhere within the parenthesized block and pressing CMD + Return. The program is now listening for OSC messages from Wekinator. Using the sensor, perform the different movements that Wekinator was trained to recognize, and listen as the music starts and evolves!
 
 ### Areas for Further Creativity
+The following are suggestions for ways the application can be modified to incorporate creative liberties of person running the application:
 1. Changing the recognized movements in Wekinator
 2. Changing the SynthDefs and/or PBinds in SuperCollider. This will change the sound of the music that is played.
 3. Changing the ordered pairs of movements that control each music variation in the MoveClasses.
